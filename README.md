@@ -33,7 +33,7 @@ $news = loadNews()->fold(
         return new None();
     },
     function($news) {
-        return new Some();
+        return new Some($news);
     }
 )->getOrElse("No news at the moment, please check back later.");
 
