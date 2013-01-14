@@ -3,6 +3,9 @@
     "require-dev": {
         "phpspec/phpspec2": "*"
     },
+    "require": {
+        "plasmaconduit/either": "dev-master"
+    },
     "config": {
         "bin-dir": "bin"
     },
