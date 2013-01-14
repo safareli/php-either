@@ -4,7 +4,7 @@
         "phpspec/phpspec2": "*"
     },
     "require": {
-        "plasmaconduit/either": "dev-master"
+        "plasmaconduit/option": "dev-master"
     },
     "config": {
         "bin-dir": "bin"
