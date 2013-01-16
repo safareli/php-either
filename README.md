@@ -1,5 +1,8 @@
 Either
 ======
+
+[![Build Status](https://travis-ci.org/JosephMoniz/php-either.png?branch=master)](undefined)
+
 A strongly typed composable alternative to exceptions and functions that return
 error codes or sane values.
 
