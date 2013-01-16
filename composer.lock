@@ -1,18 +1,18 @@
 {
-    "hash": "a6e0bc197098abc123f37b9eed70b993",
+    "hash": "ebc7dd4426a0e4819688c67900af06b5",
     "packages": [
         {
             "name": "plasmaconduit/option",
-            "version": "dev-master",
+            "version": "v0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JosephMoniz/php-option.git",
-                "reference": "3d4d67a4f91dee2d11f6cd354cdee3793cdeef26"
+                "reference": "v0.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/JosephMoniz/php-option/archive/3d4d67a4f91dee2d11f6cd354cdee3793cdeef26.zip",
-                "reference": "3d4d67a4f91dee2d11f6cd354cdee3793cdeef26",
+                "url": "https://github.com/JosephMoniz/php-option/archive/v0.1.0.zip",
+                "reference": "v0.1.0",
                 "shasum": ""
             },
             "require": {
@@ -21,7 +21,7 @@
             "require-dev": {
                 "phpspec/phpspec2": "*"
             },
-            "time": "2013-01-16 05:24:48",
+            "time": "2013-01-16 06:03:54",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -313,7 +313,7 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "plasmaconduit/option": 20
-    }
+    "stability-flags": [
+
+    ]
 }
