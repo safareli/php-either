@@ -1,9 +1,9 @@
 {
-    "hash": "ebc7dd4426a0e4819688c67900af06b5",
+    "hash": "3b5a985bdaec314ace9e3a36f9fb6db7",
     "packages": [
         {
             "name": "plasmaconduit/option",
-            "version": "v0.1.0",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JosephMoniz/php-option.git",
@@ -16,12 +16,12 @@
                 "shasum": ""
             },
             "require": {
-                "plasmaconduit/either": "dev-master"
+                "plasmaconduit/either": "0.1.*"
             },
             "require-dev": {
                 "phpspec/phpspec2": "*"
             },
-            "time": "2013-01-16 06:03:54",
+            "time": "2013-01-16 06:35:14",
             "type": "library",
             "autoload": {
                 "psr-0": {
