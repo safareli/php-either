@@ -7,18 +7,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JosephMoniz/php-option.git",
-                "reference": "dc9e07b4be4f4bdf0afb4abed29a7df2479e21d9"
+                "reference": "3d4d67a4f91dee2d11f6cd354cdee3793cdeef26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/JosephMoniz/php-option/archive/dc9e07b4be4f4bdf0afb4abed29a7df2479e21d9.zip",
-                "reference": "dc9e07b4be4f4bdf0afb4abed29a7df2479e21d9",
+                "url": "https://github.com/JosephMoniz/php-option/archive/3d4d67a4f91dee2d11f6cd354cdee3793cdeef26.zip",
+                "reference": "3d4d67a4f91dee2d11f6cd354cdee3793cdeef26",
                 "shasum": ""
+            },
+            "require": {
+                "plasmaconduit/either": "dev-master"
             },
             "require-dev": {
                 "phpspec/phpspec2": "*"
             },
-            "time": "2013-01-13 20:32:29",
+            "time": "2013-01-16 05:24:48",
             "type": "library",
             "autoload": {
                 "psr-0": {
