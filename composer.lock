@@ -3,16 +3,16 @@
     "packages": [
         {
             "name": "plasmaconduit/option",
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/JosephMoniz/php-option.git",
-                "reference": "v0.1.0"
+                "reference": "v0.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/JosephMoniz/php-option/archive/v0.1.0.zip",
-                "reference": "v0.1.0",
+                "url": "https://github.com/JosephMoniz/php-option/archive/v0.1.1.zip",
+                "reference": "v0.1.1",
                 "shasum": ""
             },
             "require": {
@@ -21,7 +21,7 @@
             "require-dev": {
                 "phpspec/phpspec2": "*"
             },
-            "time": "2013-01-16 06:35:14",
+            "time": "2013-01-22 04:55:11",
             "type": "library",
             "autoload": {
                 "psr-0": {
