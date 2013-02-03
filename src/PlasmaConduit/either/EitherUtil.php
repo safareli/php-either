@@ -1,5 +1,5 @@
 <?php
-namespace PlasmaConduit;
+namespace PlasmaConduit\either;
 use PlasmaConduit\Map;
 use PlasmaConduit\either\Left;
 use PlasmaConduit\either\Right;
@@ -31,12 +31,12 @@ class EitherUtil {
 
     private static function _ensureMap($map) {
         if (is_array($map)) {
-            return new Map();
+            return new Map($map);
         }
         if (!($map instanceof Map)) {
             throw new Exception("EitherUtil methods require map or array");
         }
-        return $map
+        return $map;
     }
 
 }
