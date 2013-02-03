@@ -1,6 +1,35 @@
 {
-    "hash": "3b5a985bdaec314ace9e3a36f9fb6db7",
+    "hash": "d97b2f685851c06ac55c74280795ead5",
     "packages": [
+        {
+            "name": "plasmaconduit/map",
+            "version": "0.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/JosephMoniz/php-map",
+                "reference": "v0.1.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/JosephMoniz/php-map/zipball/v0.1.8",
+                "reference": "v0.1.8",
+                "shasum": ""
+            },
+            "require": {
+                "plasmaconduit/option": "0.1.*"
+            },
+            "require-dev": {
+                "phpspec/phpspec2": "*"
+            },
+            "time": "2013-02-02 17:21:34",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/"
+        },
         {
             "name": "plasmaconduit/option",
             "version": "0.1.1",

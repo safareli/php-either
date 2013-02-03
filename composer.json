@@ -1,8 +1,9 @@
 {
     "name": "plasmaconduit/either",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "require": {
-        "plasmaconduit/option": "0.1.*"
+        "plasmaconduit/option": "0.1.*",
+        "plasmaconduit/map": "0.1.*"
     },
     "require-dev": {
         "phpspec/phpspec2": "*"
