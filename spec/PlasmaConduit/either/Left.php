@@ -35,6 +35,18 @@ class Left extends ObjectBehavior {
         )->shouldReturn(self::LEFT);
     }
 
+    function it_should_ignore_maper_for_map() {
+        $this->map(function($value) {
+            return "boom";
+        })->shouldHaveType('PlasmaConduit\either\Left');
+    }
+
+    function it_should_return_this_for_flatMap() {
+        $this->flatMap(function($successValue) {
+            return "boom";
+        })->shouldHaveType('PlasmaConduit\either\Left');
+    }
+
     function it_should_return_Some_for_left() {
         $this->left()->shouldHaveType('PlasmaConduit\option\Some');
     }

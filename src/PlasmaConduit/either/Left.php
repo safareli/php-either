@@ -47,6 +47,32 @@ class Left implements Either {
     }
 
     /**
+     * Returns `$this` imediately
+     *
+     * @param {callable} $mapper - The mapper to ignore
+     * @return {Either}          - This instance
+     */
+    public function map($mapper) {
+        if (!is_callable($mapper)) {
+            throw new Exception("Can't call Left#map with non callable.");
+        }
+        return $this;
+    }
+
+    /**
+     * Returns `$this` imediately
+     *
+     * @param {callable} $flatMapper - Flat mapper to ignore
+     * @return {Either}              - This instance
+     */
+    public function flatMap($flatMapper) {
+        if (!is_callable($flatMapper)) {
+            throw new Exception("Can't call Left#flatMap with non callable.");
+        }
+        return $this;
+    }
+
+    /**
      * Returns the left projection of `Left`. So `Some($value)` is returned.
      *
      * @return {Option} - The left projection as `Some`

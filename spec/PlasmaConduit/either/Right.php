@@ -1,6 +1,7 @@
 <?php
 namespace spec\PlasmaConduit\either;
 use PHPSpec2\ObjectBehavior;
+use PlasmaConduit\either\Right as RealRight;
 
 class Right extends ObjectBehavior {
 
@@ -33,6 +34,22 @@ class Right extends ObjectBehavior {
                 return Left::RIGHT;
             }
         )->shouldReturn(self::RIGHT);
+    }
+
+    function it_should_apply_mapper_for_map() {
+        $result = $this->map(function($success) {
+            return "new";
+        });
+        $result->right()->get()->shouldReturn("new");
+        $result->shouldHaveType('PlasmaConduit\either\Right');
+    }
+
+    function it_should_return_right_for_success_flatMap() {
+        $result = $this->flatMap(function($success) {
+            return new RealRight("new");
+        });
+        $result->right()->get()->shouldReturn("new");
+        $result->shouldHaveType('PlasmaConduit\either\Right');
     }
 
     function it_should_return_None_for_left() {

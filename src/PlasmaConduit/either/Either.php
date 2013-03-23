@@ -30,6 +30,27 @@ interface Either {
     public function fold($leftCase, $rightCase);
 
     /**
+     * Given a `mapper` function this function applies the mapper to the
+     * inner wrapped value if and only if this `Either` type is `Right`.
+     * If this `Either` type is `Left` then this function returns `$this`
+     * imeddiately without applying the mapper
+     *
+     * @param {callable} $mapper - The mapper to apply
+     * @return {Either}          - The new `Either` type
+     */
+    public function map($mapper);
+
+    /**
+     * Given a `flatMapper` function, this function applies the flat mapper
+     * to the wrapped value of the `Either` type if the either type is `Right`.
+     * If the `Either` type is `Left` this function immediately returns `$this`
+     *
+     * @param {callable} $flatMapper - The flat mapper to apply
+     * @return {Either}              - The new `Either` type
+     */
+    public function flatMap($flatMapper);
+
+    /**
      * Returns an `Option` projection of the `Left` value of this `Either` type.
      * So if this is type `Left` it returns `Some($value)` but if this is
      * `Right` it returns `None`

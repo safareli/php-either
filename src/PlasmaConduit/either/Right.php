@@ -3,6 +3,7 @@ namespace PlasmaConduit\either;
 use PlasmaConduit\option\Some;
 use PlasmaConduit\option\None;
 use PlasmaConduit\either\Left;
+use Exception;
 
 class Right implements Either {
 
@@ -44,6 +45,40 @@ class Right implements Either {
      */
     public function fold($leftCase, $rightCase) {
         return $rightCase($this->_value);
+    }
+
+    /**
+     * Applies the `$mapper` to the wrapped inner value of this `Right`
+     * and returns a new `Right`
+     *
+     * @param {callable} $mapper - The mapper to apply
+     * @return {Either}          - The new `Right` value
+     */
+    public function map($mapper) {
+        if (!is_callable($mapper)) {
+            throw new Exception("Can't call Right#map with non callable.");
+        }
+        return new Right($mapper($this->_value));
+    }
+
+    /**
+     * Applies the `$flatMapper` to the wrapped inner value of this `Right`.
+     * The flat mapper must return an `Either` type.
+     *
+     * @param {callabe} $flatMapper - Callable to apply on the inner value
+     * @return {Either}             - The result of the flat map
+     */
+    public function flatMap($flatMapper) {
+        if (!is_callable($flatMapper)) {
+            throw new Exception("Can't call Right#flatMap with non callable.");
+        }
+        $flatMapped = $flatMapper($this->_value);
+        if (!($flatMapped instanceof Either)) {
+            throw new Exception(
+                "Function passed to Right#flatMap must return Either"
+            );
+        }
+        return $flatMapped;
     }
 
     /**

@@ -14,7 +14,6 @@ class EitherUtil {
         });
     }
 
-
     public static function rights($map) {
         $map = self::_ensureMap($map);
         return $map->filter(function($value) {
