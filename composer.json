@@ -1,6 +1,6 @@
 {
     "name": "plasmaconduit/either",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "require": {
         "plasmaconduit/option": "0.2.*",
         "plasmaconduit/map": "0.1.*"
