@@ -6,14 +6,14 @@ interface Either {
     /**
      * Returns true if this `Either` type is `Left`, false otherwise
      *
-     * @return {Boolean}
+     * @return bool
      */
     public function isLeft();
 
     /**
      * Returns true if this `Either` type is `Right`, false otherwise
      *
-     * @return {Boolean}
+     * @return bool
      */
     public function isRight();
 
@@ -23,9 +23,9 @@ interface Either {
      * `$leftCase` with the left value. If this is the `Right` type it calls
      * the `$rightCase` with the right value.
      *
-     * @param {callable} $leftCase  - Callable for left case
-     * @param {callable} $rightCase - Callable for right case
-     * @return {Any}                - Whatver the ran case returns
+     * @param Callable $leftCase  - Callable for left case
+     * @param Callable $rightCase - Callable for right case
+     * @return mixed               - Whatever the ran case returns
      */
     public function fold($leftCase, $rightCase);
 
@@ -33,10 +33,10 @@ interface Either {
      * Given a `mapper` function this function applies the mapper to the
      * inner wrapped value if and only if this `Either` type is `Right`.
      * If this `Either` type is `Left` then this function returns `$this`
-     * imeddiately without applying the mapper
+     * immediately without applying the mapper
      *
-     * @param {callable} $mapper - The mapper to apply
-     * @return {Either}          - The new `Either` type
+     * @param Callable $mapper - The mapper to apply
+     * @return Either          - The new `Either` type
      */
     public function map($mapper);
 
@@ -45,8 +45,8 @@ interface Either {
      * to the wrapped value of the `Either` type if the either type is `Right`.
      * If the `Either` type is `Left` this function immediately returns `$this`
      *
-     * @param {callable} $flatMapper - The flat mapper to apply
-     * @return {Either}              - The new `Either` type
+     * @param Callable $flatMapper - The flat mapper to apply
+     * @return Either              - The new `Either` type
      */
     public function flatMap($flatMapper);
 
@@ -55,7 +55,7 @@ interface Either {
      * So if this is type `Left` it returns `Some($value)` but if this is
      * `Right` it returns `None`
      *
-     * @return {PlasmaConduit\option\Option}
+     * @return \PlasmaConduit\option\Option
      */
     public function left();
 
@@ -64,7 +64,7 @@ interface Either {
      * type. So if this is type `Right` it returns `Some($value)` but if this is
      * `Left` it returns `None`
      *
-     * @return {PlasmaConduit\option\Option}
+     * @return \PlasmaConduit\option\Option
      */
     public function right();
 
@@ -72,7 +72,7 @@ interface Either {
      * Returns the `Either` type as the opposite side. `Left` returns `Right`
      * and vice versa.
      *
-     * @return {Either}
+     * @return Either
      */
     public function swap();
 
