@@ -1,8 +1,10 @@
 <?php
 namespace PlasmaConduit\either;
-use PlasmaConduit\option\Some;
+
+use Exception;
 use PlasmaConduit\option\None;
-use PlasmaConduit\either\Right;
+use PlasmaConduit\option\Option;
+use PlasmaConduit\option\Some;
 
 class Left implements Either {
 
@@ -11,7 +13,7 @@ class Left implements Either {
     /**
      * Value constructor that wraps the value
      *
-     * @param {Any} $value - The value to wrap
+     * @param mixed $value - The value to wrap
      */
     public function __construct($value) {
         $this->_value = $value;
@@ -20,7 +22,7 @@ class Left implements Either {
     /**
      * Returns true
      *
-     * @return {Boolean}
+     * @return bool
      */
     public function isLeft() {
         return true;
@@ -29,7 +31,7 @@ class Left implements Either {
     /**
      * Returns false
      *
-     * @return {Boolean}
+     * @return bool
      */
     public function isRight() {
         return false;
@@ -38,9 +40,9 @@ class Left implements Either {
     /**
      * Calls the `$leftCase` with the wrapped value and returns the result
      *
-     * @param {callable} $leftCase  - Callable for left case
-     * @param {callable} $rightCase - Callable for right case
-     * @return {Any}                - Whatever the ran case returns
+     * @param Callable $leftCase - Callable for left case
+     * @param Callable $rightCase - Callable for right case
+     * @return mixed              - Whatever the ran case returns
      */
     public function fold($leftCase, $rightCase) {
         return $leftCase($this->_value);
@@ -49,8 +51,9 @@ class Left implements Either {
     /**
      * Returns `$this` imediately
      *
-     * @param {callable} $mapper - The mapper to ignore
-     * @return {Either}          - This instance
+     * @param Callable $mapper - The mapper to ignore
+     * @return Either          - This instance
+     * @throws Exception
      */
     public function map($mapper) {
         if (!is_callable($mapper)) {
@@ -62,8 +65,9 @@ class Left implements Either {
     /**
      * Returns `$this` imediately
      *
-     * @param {callable} $flatMapper - Flat mapper to ignore
-     * @return {Either}              - This instance
+     * @param Callable $flatMapper - Flat mapper to ignore
+     * @return Either              - This instance
+     * @throws Exception
      */
     public function flatMap($flatMapper) {
         if (!is_callable($flatMapper)) {
@@ -75,7 +79,7 @@ class Left implements Either {
     /**
      * Returns the left projection of `Left`. So `Some($value)` is returned.
      *
-     * @return {Option} - The left projection as `Some`
+     * @return Option - The left projection as `Some`
      */
     public function left() {
         return new Some($this->_value);
@@ -84,7 +88,7 @@ class Left implements Either {
     /**
      * Returns the right projection of `Left`. So `None` is returned.
      *
-     * @return {Option} - The right projection as `None`
+     * @return Option - The right projection as `None`
      */
     public function right() {
         return new None();
@@ -93,7 +97,7 @@ class Left implements Either {
     /**
      * Returns this `Left` as a `Right`
      *
-     * @return {Either} - The left transformed to a `Right`
+     * @return Either - The left transformed to a `Right`
      */
     public function swap() {
         return new Right($this->_value);
